@@ -1,0 +1,12 @@
+<div id="posts">
+    <div class="posts-tr">     
+        <div class="posts-th small-width">User ID</div>
+        <div class="posts-th">Title</div>
+        <div class="posts-th">Body</div>      
+    </div>   
+    <div class="posts-tr " *ngFor="let post of posts">        
+        <div class="posts-td small-width">{{ post.userId }}</div>
+        <div class="posts-td">{{ post.title }}</div>
+        <div class="posts-td">{{ post.body }}</div>
+    </div>
+</div>

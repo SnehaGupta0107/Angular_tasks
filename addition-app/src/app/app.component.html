@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 ">
+        <h1 class="page-header">Addition of two numbers:</h1>
+        <app-first-number (first_number)="onFirstNumber($event)"></app-first-number>       
+        <app-second-number (second_number)="onSecondNumber($event)"></app-second-number>
+    </div> 
+  </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-8 ">
+          <app-sum-button [firstno]="firstno" [secondno]="secondno" (total)="onSum($event)"></app-sum-button>
+          <app-result [total]="total"></app-result>
+      </div> 
+    </div> 
+</div>
