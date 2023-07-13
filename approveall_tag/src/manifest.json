@@ -1,0 +1,30 @@
+{
+    "name": "Approve all",
+    "version": "1.0",
+    "description": "Approve all request and tag them in welcome post",
+    "manifest_version": 3, 
+    "action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "activeTab",
+        "webNavigation",
+        "storage"
+    ],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },  
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": [
+            "scripts/facebook-script.js",
+            "scripts/jquery.min.js"
+          ], 
+          "css": [
+            "styles.css"
+          ]
+        }
+      ]
+}

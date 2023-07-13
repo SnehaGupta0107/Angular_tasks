@@ -1,0 +1,35 @@
+<div>
+    <h2>{{ heading | titlecase }}</h2>
+
+    <form [formGroup]="urlForm">
+
+        <div [class]="resultClass">{{result}}</div>
+        <div class="inputs">
+            <label >Welcome Post URL:</label>
+            <input type="text" formControlName="url" name="url" />
+        
+            <div *ngIf="!urlForm.controls['url'].valid && urlForm.controls['url'].touched">
+                <div *ngIf="urlForm.controls['url'].errors?.['required']" style="color: red">
+                    URL is required
+                </div>
+                <div *ngIf="urlForm.controls['url'].errors?.['pattern']" style="color: red">
+                    URL format is wrong
+                </div>
+            </div>
+        </div>
+
+        <div class="inputs">
+            <label for="message" >Comment:</label>
+            <textarea id="message" name="message" formControlName="message" value="{{commentText}}"  required ></textarea>    
+            
+            <div *ngIf="!urlForm.controls['message'].valid && urlForm.controls['message'].touched">
+                <div *ngIf="urlForm.controls['message'].errors?.['required']" style="color: red">
+                    Comment is required
+                </div>
+            </div>
+        </div>
+        <button type="submit" id="verify-button" (click)="validateUrl()">Submit</button>
+    </form>
+
+ 
+</div>
